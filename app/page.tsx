@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b pb-6 pt-8 backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:bg-zinc-800/30">
+        <p className="fixed left-0 top-0 flex w-full justify-center border-b pb-6 pt-8 border-neutral-800 bg-zinc-800/50 from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border  lg:p-4">
           Linux do Connect next-auth online demo
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center lg:static lg:size-auto lg:bg-none">
@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <div className="">
-        <button className="btn btn-primary text-lg gap-x-5" onClick={() => signIn('linuxdo')}>
+        <button className="btn bg-yellow-300 hover:bg-yellow-300/60 border-yellow-300 hover:border-yellow-300/60 text-lg gap-x-5 btn-lg" onClick={() => signIn('linuxdo')}>
           <Image src="/linuxdo.png" alt="Linuxdo" width={26} height={26} />
           Sign in with Linux.do
           </button>

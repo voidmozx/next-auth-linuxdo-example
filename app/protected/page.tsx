@@ -54,12 +54,12 @@ export default function Card() {
       className={`flex min-h-screen flex-col items-center justify-between py-24 overflow-hidden`}
     >
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b bg-gradient-to-b  pb-6 pt-8 backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:bg-zinc-800/30">
+        <div className="fixed left-0 top-0 flex w-full justify-center border-b pb-6 pt-8 border-neutral-800 bg-zinc-800/50 from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border  lg:p-4">
           Linux do Connect next-auth online demo
-        </p>
+        </div>
         <div className="fixed bottom-8 left-0 flex h-48 w-full items-end justify-center lg:static lg:size-auto lg:bg-none">
           <button
-            className="btn btn-primary text-lg gap-x-5"
+            className="btn bg-yellow-300 hover:bg-yellow-300/60 border-yellow-300 hover:border-yellow-300/60 text-lg gap-x-5"
             onClick={() => signOut()}
           >
             Sign out
@@ -80,7 +80,7 @@ export default function Card() {
             className="rounded-md"
           >
             <ShootingStarBorder>
-            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+              <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
                 {user?.trust_level >= 4 ? (
                   <div
                     ref={frontRef}
@@ -100,7 +100,7 @@ export default function Card() {
                     <CardFront user={user} />
                   </div>
                 )}
-              {/* </ShootingStarBorder>
+                {/* </ShootingStarBorder>
               <ShootingStarBorder> */}
                 {user?.trust_level >= 4 ? (
                   <div
@@ -128,8 +128,8 @@ export default function Card() {
                     <CardBack />
                   </div>
                 )}
-              {/* </ShootingStarBorder> */}
-            </ReactCardFlip>
+                {/* </ShootingStarBorder> */}
+              </ReactCardFlip>
             </ShootingStarBorder>
           </Tilt>
         ) : (

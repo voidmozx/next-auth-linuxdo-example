@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <SessionProvider>
         <body className={inter.className}>
-          <StarsBackground>{children}</StarsBackground>
+          <StarsBackground className="h-dvh overflow-y-hidden" starDensity="high">{children}</StarsBackground>
         </body>
       </SessionProvider>
     </html>

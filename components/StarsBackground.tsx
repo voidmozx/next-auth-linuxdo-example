@@ -5,13 +5,23 @@ interface StarsBackgroundProps {
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  starDensity?: 'low' | 'medium' | 'high';
 }
 
 const StarsBackground: React.FC<StarsBackgroundProps> = ({
   children,
   className = "",
   style,
+  starDensity = 'medium',
 }) => {
+  const getStarCount = (density: 'low' | 'medium' | 'high') => {
+    switch (density) {
+      case 'low': return 30;
+      case 'high': return 100;
+      default: return 50;
+    }
+  };
+
   const generateStars = (count: number) => {
     return Array.from({ length: count }, (_, i) => {
       const cx = `${Math.round(Math.random() * 10000) / 100}%`;
@@ -32,7 +42,7 @@ const StarsBackground: React.FC<StarsBackgroundProps> = ({
             height="100%"
             preserveAspectRatio="none"
           >
-            {generateStars(50)}
+            {generateStars(getStarCount(starDensity))}
           </svg>
         ))}
         <svg

@@ -67,19 +67,20 @@ export default function Card() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center rounded-md">
         {user ? (
           <Tilt
             perspective={2000}
             scale={1}
             glareEnable={true}
             glareMaxOpacity={0.9}
-            tiltMaxAngleX={5}
-            tiltMaxAngleY={5}
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
+            trackOnWindow={true}
             className="rounded-md"
           >
+            <ShootingStarBorder>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-              <ShootingStarBorder>
                 {user?.trust_level >= 4 ? (
                   <div
                     ref={frontRef}
@@ -94,13 +95,13 @@ export default function Card() {
                   <div
                     ref={frontRef}
                     onClick={handleClick}
-                    className={`isolate flex flex-col items-center rounded-lg bg-base-300/10 ring-1 ring-base-content/5 hover:cursor-pointer group gap-x-8 w-96 ${getTrustLevelStyle.card} ${getTrustLevelStyle.text}`}
+                    className={`isolate flex flex-col items-center rounded-lg bg-base-300/10 ring-1 ring-base-content/5 hover:cursor-pointer group gap-x-8 w-96 glass ${getTrustLevelStyle.card} ${getTrustLevelStyle.text}`}
                   >
                     <CardFront user={user} />
                   </div>
                 )}
-              </ShootingStarBorder>
-              <ShootingStarBorder>
+              {/* </ShootingStarBorder>
+              <ShootingStarBorder> */}
                 {user?.trust_level >= 4 ? (
                   <div
                     ref={backRef}
@@ -127,8 +128,9 @@ export default function Card() {
                     <CardBack />
                   </div>
                 )}
-              </ShootingStarBorder>
+              {/* </ShootingStarBorder> */}
             </ReactCardFlip>
+            </ShootingStarBorder>
           </Tilt>
         ) : (
           <div className="w-96 h-40 skeleton rounded-md"></div>

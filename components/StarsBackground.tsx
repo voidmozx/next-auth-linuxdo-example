@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import styles from "@/styles/StarsBackground.module.css";
+import { cn } from "@/lib/utils";
 
 interface StarsBackgroundProps {
   children?: React.ReactNode;
@@ -32,8 +33,8 @@ const StarsBackground: React.FC<StarsBackgroundProps> = ({
   };
 
   return (
-    <div className={`${styles.starsWrapper}`} style={style}>
-      <div className={`${styles.starsContainer} ${className}`}>
+    <div className={cn(className, `${styles.starsWrapper}`)} style={style}>
+      <div className={`${styles.starsContainer}`}>
         {[0, 1, 2].map((s) => (
           <svg
             key={s}

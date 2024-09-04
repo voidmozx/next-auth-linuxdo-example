@@ -186,7 +186,7 @@ const CardFront = ({ user }: { user: any }) => {
           </dl>
         </div>
       </div>
-      <div className="font-sans font-light text-sm pt-2">ID: {user?.id}</div>
+      <div className="font-sans font-light text-sm pt-2"><b className="font-bold">ID&nbsp;</b> {user?.id}</div>
     </div>
   );
 };
